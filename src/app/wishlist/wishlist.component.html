@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="banner">
+    <div class="heading">
+        <h1 class="text-center">WISHLIST</h1>
+    </div>
+
+</div>
+<div>
+
+
+    <!-- Section-->
+    <section class="py-5">
+
+        <div class="container px-4 px-lg-5 mt-5">
+            <div *ngIf="allMenu.length>0">
+                <h3 class=" ms-5 mb-4  fw-bolder">Your Wishlist...</h3>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center ">
+                    <div class="col mb-5 " *ngFor="let menu of allMenu">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img height="250px" style="cursor: pointer;" class="card-img-top" [src]="menu.image"
+                                routerLink="/{{menu.id}}/view" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{menu.name}}</h5>
+                                    <!-- Product price-->
+                                    {{menu.price}}
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="d-flex justify-content-between">
+                                    <button (click)="removeItem(menu._id)" class="btn">
+                                        <i class="fa-solid fa-heart-circle-xmark text-danger"></i>
+                                    </button>
+                                    <button (click)="addToCart(menu)" class="btn">
+                                        <i class="fa-solid fa-cart-plus text-success"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div *ngIf="allMenu.length==0">
+                <div style="height: 80vh;" class="d-flex  align-items-center justify-content-center flex-column">
+                    <img width="400px" src="assets/images/empty-cart.avif" alt="">
+                    <h1 class="text-danger">
+                        Your wishlist is empty!!
+                    </h1>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

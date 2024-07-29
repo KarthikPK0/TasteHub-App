@@ -1,0 +1,31 @@
+<app-header></app-header>
+<section   style="padding-top: 90px;  padding-bottom: 60px;">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img width="300px" height="300px" class="img-fluid" [src]="menu.image" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">MID: {{menu._id}}</div>
+                <h1 class="display-5 fw-bolder">{{menu.name}}</h1>
+                <div class="fs-5 mb-5">
+                
+                    <span>$ {{menu.price}}</span>
+                </div>
+                <p class="lead"><b>Category: </b>{{menu.category}}</p>
+                <p class="lead">
+                     
+                     <b>Dish Details: </b>{{menu.description}}</p>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button" (click)="addToWishlist(menu)">
+                        <i class="fa-solid fa-heart text-danger me-1"></i>
+                        Add to Wishlist
+                    </button>
+                 
+                    <button (click)="addToCart(menu)"  class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="fa-solid fa-cart-plus me-1 text-success"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<app-header [dataFromParent]="insideMenu" ></app-header>
+<div class="banner">
+    <div class="heading"><h1 class="text-center">MENU</h1></div>
+ 
+</div>
+<div>
+   
+   
+    <!-- Section-->
+  
+    <section class="py-5">
+        <h3 class="text-center my-3">Delight Your Taste Buds with Our Exquisite Selection</h3>
+        <div class="w-100   d-flex justify-content-center align-items-center mt-5">
+
+            <button class="btn border me-1"><i class="fa-solid fa-magnifying-glass"></i> </button>
+     
+            <input class="form-control w-50 border-2" placeholder="Search food by name" type="search" [(ngModel)]="searchKey">
+ 
+     </div>
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div *ngFor="let menu of allMenu | search : searchKey " class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img height="250px" style="cursor: pointer;" class="card-img-top" [src]="menu.image" routerLink="/{{menu.id}}/view" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{menu.name}}</h5>
+                                <!-- Product price-->
+                               {{menu.price}}
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div  class="d-flex justify-content-between">
+                            <button (click)="addToWishlist(menu)" class="btn">
+                                <i class="fa-solid fa-heart text-danger"></i>
+                            </button>
+                            <button (click)="addToCart(menu)" class="btn">
+                                <i class="fa-solid fa-cart-plus text-success"></i>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="(allMenu | search : searchKey).length == 0" class="text-danger text-center fs-6 fw-bolder">*No matches found for your search. Explore our menu for other tasty treats!</div>
+              
+             
+            </div>
+        </div>
+    </section>
+</div>
+

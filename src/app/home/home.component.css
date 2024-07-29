@@ -1,0 +1,42 @@
+.carousel-item {
+    text-align: center;
+}
+.carousel-item img {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.fa-star{
+    font-size: 15px;
+}
+
+.fa-star-half-stroke{
+    font-size: 15px;
+}
+
+.flex-item{
+    width: 200px;
+    height: 200px;
+    border-radius: 125px;
+}
+
+.item1{
+    background-image: URL('assets/images/SC.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.item2{
+    background-image: URL('assets/images/T.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.item3{
+    background-image: URL('assets/images/Tacos.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.item4{
+    background-image: URL('assets/images/CM.jpg');
+    background-position: center;
+    background-size: cover;
+}

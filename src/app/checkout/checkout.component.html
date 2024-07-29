@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="w-50 mt-5 mb-5">
+        <div *ngIf="!checkoutStatus">
+            <h1>
+                Delivery Details!!
+            </h1>
+            <form [formGroup]="checkoutForm" class="border rounded p-3">
+                <div class="form-floating mb-3">
+                    <input formControlName="username" type="text" class="form-control" id="floatingInput1" placeholder="Username">
+                    <label for="floatingInput1">Username</label>
+                  </div>
+
+                  <div *ngIf="checkoutForm.get('username')?.errors && checkoutForm.get('username')?.touched " class="fw-bolder text-danger mb-3">
+                    *username is required
+                </div>
+
+                  
+
+                  <div class="form-floating mb-3">
+                    <input formControlName="address" type="text" class="form-control" id="floatingInput2" placeholder="Address">
+                    <label for="floatingInput2">Address</label>
+                  </div>
+                  <div *ngIf="checkoutForm.get('address')?.errors && checkoutForm.get('address')?.touched " class="fw-bolder text-danger mb-3">
+                    *Address is required
+                </div>
+
+
+
+                  <div class="form-floating mb-3">
+                    <input formControlName="pincode" type="text" class="form-control" id="floatingInput3" placeholder="Pincode">
+                    <label for="floatingInput3">Pincode</label>
+                  </div>
+
+                  <div *ngIf="checkoutForm.get('pincode')?.errors && checkoutForm.get('pincode')?.touched " class="fw-bolder text-danger mb-3">
+                    *Invalid Pincode: Please enter a 6-digit pincode
+                </div>
+
+
+                  <div class="d-flex justify-content-evenly">
+                    <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+                    <button (click)="proceedToBuy()" class="btn btn-secondary">Proceed To Buy</button>
+                  </div>
+            </form>
+        </div>
+
+        <div *ngIf="checkoutStatus">
+            <h1>Payment Details!!</h1>
+            <hr>
+            <p class="fw-bolder mb-2 mt-2">To Address,</p>
+            <h5>{{checkoutForm.value.username}}</h5>
+            <h5>{{checkoutForm.value.address}}</h5>
+            <h5>{{checkoutForm.value.pincode}}</h5>
+            <h4  class="text-danger">Total Amount: $ {{totalAmount}} </h4>
+            
+
+            <div class="mt-5">
+              <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

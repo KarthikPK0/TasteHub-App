@@ -1,0 +1,54 @@
+.help a{
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.help a:hover{
+    text-decoration: underline;
+}
+
+.icons{
+    gap: .5em;
+}
+
+.icon
+{
+    width: 30px;
+    height: 30px; 
+    transition: all 0.3s ease;
+    
+}
+
+.fa-brands{
+font-size: 22px;
+color: #555;
+transition: color 0.3s ease;
+}
+
+.fa-solid{
+    font-size: 22px;
+    color: #555;
+    transition: color 0.3s ease;
+    }
+    
+
+.twitter,.fa-twitter:hover{
+    color: #1DA1F2;
+}
+
+.facebook,.fa-facebook:hover{
+    color: #4267B2;
+}
+
+.youtube,.fa-envelope:hover{
+    color: #896b49;
+}
+
+.linkedin,.fa-linkedin:hover{
+    color:#0A66C2;
+}
+
+.linkedin,.fa-phone:hover{
+    color:green;
+}
+

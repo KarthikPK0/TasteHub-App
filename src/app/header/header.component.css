@@ -1,0 +1,45 @@
+.navbar{
+    background-color: #080808;
+}
+
+.nav-item a{
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover{
+    color:orange ;
+}
+ 
+.ul1 li a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff; /* Initial text color */
+    position: relative; /* For positioning the pseudo-element */
+    display: inline-block; /* To allow padding and pseudo-element effects */
+    text-decoration: none; /* Remove default underline */
+    overflow: hidden; /* Ensure pseudo-element doesn’t overflow */
+    transition: color 0.3s ease; /* Smooth transition for the text color */
+}
+
+.ul1 li a::after {
+    content: ""; /* Pseudo-element content */
+    position: absolute; /* Position it absolutely */
+    left: 50%; /* Start from the center */
+    bottom: 0; /* Align to the bottom */
+    width: 0%; /* Initially no width */
+    height: 2px; /* Height of the underline */ 
+    background-color: orange; /* Underline color */
+    transition: all 0.3s ease; /* Smooth transition for the underline */
+}
+
+.ul1 li a:hover {
+    color: orange; /* Change text color on hover */
+}
+
+.ul1 li a:hover::after {
+    left: 0; /* Move to the left */
+    width: 100%; /* Expand to full width */
+}
+

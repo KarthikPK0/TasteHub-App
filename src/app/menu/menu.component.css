@@ -1,0 +1,23 @@
+.banner{
+    width: 100%;
+    height: 400px;
+    background-image: URL('assets/images/menu-banner.jpg');
+    background-position: center;
+    background-size: cover;
+     
+}
+
+.heading{
+    padding-top: 220px;
+      
+}
+
+.heading h1{
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card:hover img{
+    scale: 1.1;
+}
