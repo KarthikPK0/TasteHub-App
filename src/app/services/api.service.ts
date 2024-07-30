@@ -12,7 +12,7 @@ export class ApiService {
 
   server_url = "https://tastehub-server.onrender.com"
 
-  //http://localhost:3000
+  //http://localhost:3000 //https://tastehub-server.onrender.com
 
   constructor(private http:HttpClient) {
     if(sessionStorage.getItem("token")){
